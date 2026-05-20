@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius-button);
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: transform var(--transition-normal), background var(--transition-normal), box-shadow var(--transition-normal);
+  text-align: center;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.filled {
+  background: var(--color-soft-rose);
+  color: var(--color-black);
+}
+
+.filled:hover {
+  background: var(--color-warm-rose);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-black);
+  border: 1.5px solid var(--color-soft-rose);
+}
+
+.outline:hover {
+  background: var(--color-soft-rose);
+}

@@ -1,0 +1,251 @@
+.section {
+  background: var(--color-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 3rem 0;
+}
+
+.section:first-of-type {
+  padding-top: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.imageLeft .imageCol { order: 0; }
+.imageLeft .textCol { order: 1; }
+.imageRight .imageCol { order: 1; }
+.imageRight .textCol { order: 0; }
+
+.imageCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  min-width: 0;
+}
+
+.image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.textCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+}
+
+.textColTop {
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+[data-lang="zh"] .section:nth-child(1) .textColTop {
+  margin-top: -40px;
+}
+
+[data-lang="zh"] .section:nth-child(2) .textColTop {
+  margin-top: -90px;
+}
+
+[data-lang="zh"] .section:nth-child(3) .textColTop {
+  margin-top: -90px;
+}
+
+.textBlock {
+  max-width: 420px;
+  position: relative;
+  margin-top: -100px;
+}
+
+.family {
+  font-size: 0.9rem;
+  color: #302D2C;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-deep-rose);
+  margin-bottom: 1.5rem;
+}
+
+.viewNotesBtn {
+  padding: 10px 24px;
+  border-radius: var(--radius-button);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-black);
+  background: var(--color-soft-rose);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.viewNotesBtn:hover {
+  background: var(--color-warm-rose);
+  transform: scale(1.03);
+}
+
+.notesPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 1rem 0;
+  animation: fadeIn 300ms ease;
+  text-align: left;
+}
+
+.notesPanelEn {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  animation: fadeIn 300ms ease;
+  text-align: left;
+}
+
+.notesTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-deep-rose);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.notesTitle:first-child {
+  margin-top: 0;
+}
+
+.notesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.25rem;
+}
+
+.noteTag {
+  padding: 4px 12px;
+  background: var(--color-white);
+  border-radius: var(--radius-button);
+  font-size: 0.8rem;
+  color: var(--color-black);
+}
+
+.usageScene {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-black);
+}
+
+/* Title — English defaults */
+.title {
+  font-family: var(--font-brand);
+  font-size: 142px;
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1;
+  text-align: center;
+  margin-bottom: -0.4em;
+  z-index: 3;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.imageRight .title {
+  text-align: left;
+  margin-left: -820px;
+  margin-top: -150px;
+}
+
+.imageLeft .title {
+  text-align: right;
+  margin-left: 820px;
+  margin-top: -100px;
+}
+
+.imageLeft .image {
+  margin-left: 60px;
+  margin-right: auto;
+  object-fit: contain;
+}
+
+.imageRight .image {
+  margin-left: -50px;
+  margin-right: 0;
+  margin-top: -150px;
+  object-fit: cover;
+}
+
+/* Chinese overrides — titles pinned 10px from page edges, 70px gap, no white space */
+[data-lang="zh"] .section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+[data-lang="zh"] .section:first-of-type {
+  padding-top: 0;
+}
+
+[data-lang="zh"] .imageLeft .title {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
+[data-lang="zh"] .imageRight .title {
+  text-align: left;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-top: 0;
+}
+
+[data-lang="zh"] .imageLeft .image {
+  margin-left: 50px;
+  margin-right: 0;
+  object-fit: cover;
+}
+
+[data-lang="zh"] .textBlock {
+  margin-top: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageCol {
+    order: -1 !important;
+    padding: 0;
+  }
+
+  .textCol {
+    order: 0 !important;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+  }
+}

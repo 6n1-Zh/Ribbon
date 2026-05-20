@@ -1,0 +1,11 @@
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.pink {
+  background: var(--color-pink);
+}
+
+.cream {
+  background: var(--color-cream);
+}

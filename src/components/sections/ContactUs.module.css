@@ -1,0 +1,119 @@
+.section {
+  background: var(--color-cream);
+  padding: 0.85rem clamp(1.5rem, 5vw, 4rem) 4rem;
+}
+
+.topBlock {
+  padding: 3rem 0 2.5rem;
+}
+
+.brandName {
+  font-family: var(--font-brand);
+  font-size: 300px;
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 1;
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-gray);
+  width: 100%;
+}
+
+.bottomBlock {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0;
+  padding: 2.5rem 0;
+}
+
+.leftCol {
+  padding-right: 2rem;
+  padding-left: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightCol {
+  padding-left: calc(2rem + 85px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vertDivider {
+  width: 1px;
+  background: var(--color-gray);
+  height: 100%;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #302D2C;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.subtitle:first-child {
+  margin-top: 0;
+}
+
+.founderNames {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: -7px;
+}
+
+.founderNames span {
+  font-size: 60px;
+  font-weight: 700;
+  color: #dfb2b5;
+  line-height: 1.1;
+}
+
+.bodyText {
+  font-size: 1rem;
+  color: var(--color-black);
+  line-height: 1.6;
+}
+
+.label {
+  color: var(--color-deep-rose);
+  font-weight: 600;
+}
+
+.link {
+  font-size: 1rem;
+  color: var(--color-black);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-deep-rose);
+}
+
+@media (max-width: 600px) {
+  .bottomBlock {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .vertDivider {
+    display: none;
+  }
+
+  .leftCol,
+  .rightCol {
+    padding: 0;
+  }
+
+  .brandName {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+}
