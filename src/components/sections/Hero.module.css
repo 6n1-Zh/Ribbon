@@ -6,6 +6,7 @@
   justify-content: center;
   padding-top: 5rem;
   padding-bottom: 20px;
+  overflow: hidden;
 }
 
 .inner {
@@ -25,6 +26,7 @@
   margin-bottom: -0.05em;
   position: relative;
   z-index: 1;
+  animation: heroDropDown 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .slogan {
@@ -37,6 +39,8 @@
   letter-spacing: 0.05em;
   position: relative;
   z-index: 2;
+  opacity: 0;
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
 }
 
 .imageWrapper {
@@ -45,6 +49,7 @@
   position: relative;
   z-index: 3;
   margin-top: calc(-3.5rem + 5px);
+  animation: heroRiseUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 .image {
@@ -57,4 +62,78 @@
   margin-top: 20px;
   position: relative;
   z-index: 2;
+  opacity: 0;
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+}
+
+@keyframes heroDropDown {
+  from {
+    transform: translateY(-50vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroRiseUp {
+  from {
+    transform: translateY(60vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    aspect-ratio: 1 / 2.16;
+    max-height: 960px;
+    min-height: auto;
+  }
+
+  .brandName {
+    font-size: clamp(3.3rem, 16vw, 6.5rem) !important;
+  }
+    text-align: center;
+  }
+
+  .imageWrapper {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .slogan {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 10px;
+  }
+
+  .brandName {
+    font-size: clamp(3rem, 15vw, 6rem) !important;
+  }
+
+  .imageWrapper {
+    max-width: 250px;
+    margin-top: -1rem;
+  }
 }

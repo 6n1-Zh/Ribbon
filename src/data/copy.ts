@@ -59,7 +59,7 @@ const zh: CopyData = {
     en: "English"
   },
   hero: {
-    slogan: "Bold flames and good vibes.",
+    slogan: "bold flames and good vibes.",
     storyTrigger: "探索品牌故事"
   },
   scents: {
@@ -117,7 +117,7 @@ const en: CopyData = {
     en: "English"
   },
   hero: {
-    slogan: "Bold flames and good vibes.",
+    slogan: "bold flames and good vibes.",
     storyTrigger: "Discover Our Story"
   },
   scents: {

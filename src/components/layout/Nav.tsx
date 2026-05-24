@@ -16,7 +16,7 @@ export default function Nav({ copy, currentLang }: Props) {
           <a href="#scents" className={styles.link}>
             {copy.nav.scents}
           </a>
-          <a href="#why-ribbon" className={styles.link}>
+          <a href="#why-ribbon" className={`${styles.link} ${styles.whyRibbonLink}`}>
             {copy.nav.whyRibbon}
           </a>
           <a href="#contact" className={styles.link}>

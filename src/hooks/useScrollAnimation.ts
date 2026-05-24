@@ -1,26 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-export function useScrollAnimation(threshold = 0.15) {
-  const ref = useRef<HTMLDivElement>(null);
+export function useScrollAnimation(threshold = 0.15, once = true) {
   const [isVisible, setIsVisible] = useState(false);
+  const [el, setEl] = useState<HTMLElement | null>(null);
+
+  const ref = useCallback((node: HTMLElement | null) => {
+    setEl(node);
+  }, []);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    if (!el) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(element);
+          if (once) observer.unobserve(el);
+        } else if (!once) {
+          setIsVisible(false);
         }
       },
       { threshold }
     );
 
-    observer.observe(element);
+    observer.observe(el);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [el, threshold, once]);
 
   return { ref, isVisible };
 }

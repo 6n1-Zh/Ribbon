@@ -98,7 +98,7 @@
   color: var(--color-deep-rose);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .bottomBlock {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -115,5 +115,23 @@
 
   .brandName {
     font-size: clamp(2.5rem, 10vw, 4rem);
+    text-align: center;
+  }
+
+  .founderNames {
+    align-items: center;
+  }
+
+  .founderNames span {
+    font-size: clamp(2rem, 8vw, 3rem);
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .bodyText {
+    text-align: center;
   }
 }

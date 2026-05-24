@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Product } from "../../data/products";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import styles from "./ScentCard.module.css";
 
 interface Props {
@@ -34,13 +35,20 @@ export default function ScentCard({
   lang
 }: Props) {
   const [expanded, setExpanded] = useState(false);
+  const imageAnim = useScrollAnimation(0.1);
+  const textAnim = useScrollAnimation(0.1);
+  const titleAnim = useScrollAnimation(0.1, false);
 
   return (
     <section className={styles.section}>
       <div className={`${styles.grid} ${align === "right" ? styles.imageRight : styles.imageLeft}`}>
-        <div className={styles.imageCol}>
+        <div
+          ref={imageAnim.ref}
+          className={`${styles.imageCol} ${imageAnim.isVisible ? styles.fadeInUp : ""}`}
+        >
           <h2
-            className={styles.title}
+            ref={titleAnim.ref}
+            className={`${styles.title} ${titleAnim.isVisible ? styles.fadeInUp : ""}`}
             style={{ textAlign: titleAlign, ...titleStyle }}
           >
             {multiline
@@ -62,19 +70,19 @@ export default function ScentCard({
           />
         </div>
 
-        <div className={`${styles.textCol} ${lang === "zh" && expanded ? styles.textColTop : ""}`}>
+        <div
+          ref={textAnim.ref}
+          className={`${styles.textCol} ${lang === "zh" && expanded ? styles.textColTop : ""} ${textAnim.isVisible ? styles.fadeInUp : ""}`}
+        >
           <div className={styles.textBlock} style={textStyle}>
-            {/* English: family hidden when expanded; Chinese: always shown */}
             {(lang === "zh" || !expanded) && (
               <p className={styles.family}>{product.family[lang]}</p>
             )}
 
-            {/* English: description hidden when expanded; Chinese: always shown */}
             {(lang === "zh" || !expanded) && (
               <p className={styles.description}>{product.shortDescription[lang]}</p>
             )}
 
-            {/* English: notes above button when expanded */}
             {lang === "en" && expanded && (
               <div className={styles.notesPanelEn}>
                 <h4 className={styles.notesTitle}>{notesLabel}</h4>
@@ -97,7 +105,6 @@ export default function ScentCard({
               {expanded ? exploreLabel : viewNotesLabel}
             </button>
 
-            {/* Chinese: notes below button when expanded */}
             {lang === "zh" && expanded && (
               <div className={styles.notesPanel}>
                 <h4 className={styles.notesTitle}>{notesLabel}</h4>
