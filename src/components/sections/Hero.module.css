@@ -101,7 +101,7 @@
 
 @media (max-width: 500px) {
   .hero {
-    aspect-ratio: 1 / 2.16;
+    aspect-ratio: 1 / 2;
     max-height: 960px;
     min-height: auto;
   }

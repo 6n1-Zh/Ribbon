@@ -6,13 +6,15 @@
 
 .subtitle {
   margin-bottom: 1.5rem;
+  margin-top: -20px;
+  color: #FFFFFF !important;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 320px 320px 320px;
   gap: 30px;
-  margin-top: -40px;
+  margin-top: -10px;
   justify-content: center;
 }
 

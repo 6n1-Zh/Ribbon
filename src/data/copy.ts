@@ -131,7 +131,7 @@ const en: CopyData = {
   },
   whyRibbon: {
     title: "Why Ribbon",
-    subtitle: "More than a candle — a way of living",
+    subtitle: "More than a candle — it's a lifestyle.",
     pillars: [
       {
         title: "Artistic Fragrance, Elevated Living",
