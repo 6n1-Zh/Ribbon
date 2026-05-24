@@ -25,3 +25,10 @@
   color: var(--color-warm-rose);
   font-weight: 600;
 }
+
+@media (max-width: 500px) {
+  .pill {
+    font-size: 0.55rem;
+    padding: 3px 8px;
+  }
+}

@@ -71,12 +71,6 @@
   font-weight: 400;
 }
 
-@media (max-width: 500px) {
-  .whyRibbonLink {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   .nav {
     left: 0.5rem;
@@ -99,6 +93,25 @@
   }
 
   .link {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .whyRibbonLink {
+    display: none;
+  }
+
+  .nav {
+    border: none;
+    top: calc(0.5rem + 50px);
+  }
+
+  .left {
+    margin-left: 20px;
+  }
+
+  [data-lang="zh"] .link {
+    font-size: 0.55rem;
   }
 }

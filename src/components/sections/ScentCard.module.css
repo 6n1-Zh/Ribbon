@@ -256,6 +256,7 @@
 
   [data-lang="zh"] .title {
     font-size: clamp(3.5rem, 14vw, 7rem) !important;
+    font-family: var(--font-brand) !important;
   }
 
   .section:nth-child(1) .title,
