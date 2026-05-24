@@ -108,7 +108,6 @@
 
   .brandName {
     font-size: clamp(3.3rem, 16vw, 6.5rem) !important;
-  }
     text-align: center;
   }
 
