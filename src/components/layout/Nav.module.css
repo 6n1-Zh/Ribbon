@@ -104,14 +104,22 @@
 
   .nav {
     border: none;
-    top: calc(0.5rem + 50px);
+    top: 10px;
   }
 
   .left {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   [data-lang="zh"] .link {
     font-size: 0.55rem;
+  }
+
+  [data-lang="en"] .left {
+    margin-left: 3px;
+  }
+
+  [data-lang="en"] .link {
+    font-size: 0.65rem;
   }
 }

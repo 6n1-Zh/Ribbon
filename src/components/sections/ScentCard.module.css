@@ -256,7 +256,7 @@
 
   [data-lang="zh"] .title {
     font-size: clamp(3.5rem, 14vw, 7rem) !important;
-    font-family: var(--font-brand) !important;
+    font-family: var(--font-zh) !important;
   }
 
   .section:nth-child(1) .title,
@@ -405,7 +405,9 @@
   }
 
   .textBlock {
-    max-width: 100%;
+    max-width: 350px;
+    margin-left: auto !important;
+    margin-right: auto !important;
     margin-top: 1rem !important;
     text-align: center;
   }

@@ -24,7 +24,7 @@ export default function Scents({ copy, lang }: Props) {
         imageSrc="/images/1.jpg"
         align="left"
         imageStyle={isEn ? { marginTop: "-10px" } : undefined}
-        titleStyle={isZh ? { marginLeft: "auto", marginRight: "500px", textAlign: "left" } : undefined}
+        titleStyle={isZh ? { marginLeft: "auto", marginRight: "510px", textAlign: "left" } : undefined}
         textStyle={isEn ? { marginTop: "-10px" } : isZh ? { marginLeft: "-30px" } : undefined}
         viewNotesLabel={copy.scents.viewNotes}
         exploreLabel={copy.scents.exploreScent}
@@ -54,7 +54,7 @@ export default function Scents({ copy, lang }: Props) {
         align="left"
         multiline
         titleAlign="right"
-        titleStyle={isEn ? { marginTop: "-145px" } : isZh ? { marginRight: "670px", marginTop: "-230px" } : undefined}
+        titleStyle={isEn ? { marginTop: "-145px" } : isZh ? { marginRight: "680px", marginTop: "-230px" } : undefined}
         imageStyle={isEn ? { marginTop: "-145px" } : isZh ? { marginTop: "-10px" } : undefined}
         textStyle={isEn ? { marginTop: "105px" } : isZh ? { marginTop: "-190px", marginLeft: "-30px" } : undefined}
         viewNotesLabel={copy.scents.viewNotes}
